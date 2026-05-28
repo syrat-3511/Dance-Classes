@@ -301,7 +301,7 @@ button:focus-visible {
 
 .mode-tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   padding: 4px;
   border: 1px solid var(--line);
@@ -523,7 +523,7 @@ button:focus-visible {
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(126px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
   gap: 10px;
 }
 

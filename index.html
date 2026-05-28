@@ -80,7 +80,10 @@
     <main id="home" class="app-shell">
       <aside class="side-panel" aria-label="Class mode and ages">
         <div class="mode-tabs" role="tablist" aria-label="Class type">
-          <button class="mode-tab active" id="publicTab" type="button" data-mode="public" role="tab" aria-selected="true">
+          <button class="mode-tab active" id="allTab" type="button" data-mode="all" role="tab" aria-selected="true">
+            All
+          </button>
+          <button class="mode-tab" id="publicTab" type="button" data-mode="public" role="tab" aria-selected="false">
             Public
           </button>
           <button class="mode-tab" id="privateTab" type="button" data-mode="private" role="tab" aria-selected="false">
@@ -98,7 +101,7 @@
           <dl>
             <div>
               <dt>Mode</dt>
-              <dd id="summaryMode">Public</dd>
+              <dd id="summaryMode">All</dd>
             </div>
             <div>
               <dt>Age</dt>

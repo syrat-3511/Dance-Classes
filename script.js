@@ -1,133 +1,4 @@
-const lessons = [
-  {
-    id: "odc-ballet-kids",
-    title: "Ballet Foundations",
-    type: "Ballet",
-    mode: "public",
-    ages: ["3-5", "6-8"],
-    studio: "ODC Dance Commons",
-    city: "San Francisco",
-    zip: "94110",
-    address: "Mission District",
-    weekday: "Monday",
-    date: "Jun 1",
-    time: "4:00 PM",
-    frequency: "Weekly",
-    teacher: "Ms. Alvarez",
-  },
-  {
-    id: "mission-hiphop-teen",
-    title: "Hip-Hop Groove Lab",
-    type: "Hip-Hop",
-    mode: "public",
-    ages: ["12-14", "15-17", "18+"],
-    studio: "Dance Mission Theater",
-    city: "San Francisco",
-    zip: "94110",
-    address: "24th Street",
-    weekday: "Tuesday",
-    date: "Jun 2",
-    time: "6:30 PM",
-    frequency: "Weekly",
-    teacher: "Jordan Lee",
-  },
-  {
-    id: "rae-jazz-adult",
-    title: "Beginner Jazz",
-    type: "Jazz",
-    mode: "public",
-    ages: ["18+"],
-    studio: "Rae Studios",
-    city: "San Francisco",
-    zip: "94103",
-    address: "Union Square",
-    weekday: "Wednesday",
-    date: "Jun 3",
-    time: "7:15 PM",
-    frequency: "Weekly",
-    teacher: "Nina Park",
-  },
-  {
-    id: "city-salsa-private",
-    title: "Salsa Private Coaching",
-    type: "Salsa",
-    mode: "private",
-    ages: ["15-17", "18+"],
-    studio: "City Dance Studios",
-    city: "San Francisco",
-    zip: "94102",
-    address: "Civic Center",
-    weekday: "Thursday",
-    date: "Jun 4",
-    time: "5:30 PM",
-    frequency: "Flexible",
-    teacher: "Marco Rivera",
-  },
-  {
-    id: "western-ballet-private",
-    title: "Youth Ballet Private",
-    type: "Ballet",
-    mode: "private",
-    ages: ["3-5", "6-8", "9-11", "12-14", "15-17"],
-    studio: "Western Ballet",
-    city: "Mountain View",
-    zip: "94041",
-    address: "Old Mountain View",
-    weekday: "Friday",
-    date: "Jun 5",
-    time: "3:45 PM",
-    frequency: "Flexible",
-    teacher: "Elena Wright",
-  },
-  {
-    id: "sj-ballroom-adult",
-    title: "Ballroom Basics",
-    type: "Ballroom",
-    mode: "public",
-    ages: ["18+"],
-    studio: "Just Dance Ballroom",
-    city: "Oakland",
-    zip: "94612",
-    address: "Downtown Oakland",
-    weekday: "Monday",
-    date: "Jun 1",
-    time: "7:00 PM",
-    frequency: "Weekly",
-    teacher: "Sam Kim",
-  },
-  {
-    id: "norcal-contemporary",
-    title: "Contemporary Flow",
-    type: "Contemporary",
-    mode: "public",
-    ages: ["12-14", "15-17", "18+"],
-    studio: "Nor Cal Dance Arts",
-    city: "San Jose",
-    zip: "95128",
-    address: "West San Jose",
-    weekday: "Thursday",
-    date: "Jun 4",
-    time: "6:00 PM",
-    frequency: "Weekly",
-    teacher: "Ari Chen",
-  },
-  {
-    id: "salsacrazy-adult-private",
-    title: "Wedding Dance Prep",
-    type: "Ballroom",
-    mode: "private",
-    ages: ["18+"],
-    studio: "SalsaCrazy",
-    city: "San Francisco",
-    zip: "94103",
-    address: "SoMa",
-    weekday: "Wednesday",
-    date: "Jun 3",
-    time: "8:00 PM",
-    frequency: "Flexible",
-    teacher: "Dana Fields",
-  },
-];
+let lessons = [];
 
 const questions = {
   first: "Bring comfortable clothes, a water bottle, and the studio will confirm shoes after your request is sent.",
@@ -142,15 +13,18 @@ const weekdays = [
   { day: "Wednesday", baseDate: "2026-06-03" },
   { day: "Thursday", baseDate: "2026-06-04" },
   { day: "Friday", baseDate: "2026-06-05" },
+  { day: "Saturday", baseDate: "2026-06-06" },
+  { day: "Sunday", baseDate: "2026-06-07" },
 ];
 
 const ageOptionsByMode = {
+  all: ["Any age", "3-5", "6-8", "9-11", "12-14", "15-17", "18+"],
   public: ["Any age", "3-5", "6-8", "9-11", "12-14", "15-17", "18+"],
   private: ["Any age", "3-5", "6-8", "9-11", "12-14", "15-17", "18+"],
 };
 
 const state = {
-  mode: "public",
+  mode: "all",
   age: "Any age",
   selectedLesson: null,
   weekOffset: 0,
@@ -192,6 +66,65 @@ function addOptions(select, values, allLabel) {
     select.append(option);
   });
   select.value = values.includes(current) ? current : "all";
+}
+
+function formatMode(mode) {
+  return mode === "private" ? "Private" : "Public";
+}
+
+function formatAges(ages) {
+  return ages.join(", ");
+}
+
+function formatSchedule(lesson) {
+  if (lesson.time.toLowerCase() === "by appointment") {
+    return `${lesson.weekday}, by appointment`;
+  }
+  return `${lesson.weekday} at ${lesson.time}`;
+}
+
+function formatSelectedSchedule(lesson) {
+  if (lesson.time.toLowerCase() === "by appointment") {
+    return `${lesson.weekday}, by appointment`;
+  }
+  return `${lesson.weekday}, ${lessonDisplayDate(lesson)} at ${lesson.time}`;
+}
+
+function normalizeLesson(item) {
+  const location = item.location || {};
+  const schedule = item.schedule || {};
+  return {
+    id: item.id,
+    title: item.className,
+    type: item.danceType,
+    mode: item.mode,
+    ages: item.ageGroups || [],
+    studio: item.studio,
+    city: location.city,
+    state: location.state,
+    zip: location.zip,
+    address: location.address,
+    locationName: location.name,
+    weekday: schedule.weekday,
+    time: schedule.time,
+    frequency: schedule.frequency || "Weekly",
+    sourceUrl: item.sourceUrl,
+    lastChecked: item.lastChecked,
+  };
+}
+
+function isCompleteClass(item) {
+  return Boolean(
+    item.id &&
+      item.studio &&
+      item.className &&
+      item.danceType &&
+      item.mode &&
+      item.ageGroups?.length &&
+      item.location?.zip &&
+      item.schedule?.weekday &&
+      item.schedule?.time,
+  );
 }
 
 function zipQuery() {
@@ -259,11 +192,12 @@ function renderAgeOptions() {
 function filteredLessons() {
   const search = els.searchInput.value.trim().toLowerCase();
   return lessons.filter((lesson) => {
-    const matchesMode = lesson.mode === state.mode;
+    const matchesMode = state.mode === "all" || lesson.mode === state.mode;
     const matchesAge = state.age === "Any age" || lesson.ages.includes(state.age);
     const matchesType = els.danceType.value === "all" || lesson.type === els.danceType.value;
-    const matchesZip = !zipQuery() || lesson.zip.startsWith(zipQuery());
-    const searchable = `${lesson.title} ${lesson.type} ${lesson.studio} ${lesson.city} ${lesson.teacher}`.toLowerCase();
+    const query = zipQuery();
+    const matchesZip = !query || (query.length === 5 ? lesson.zip === query : lesson.zip.startsWith(query));
+    const searchable = `${lesson.title} ${lesson.type} ${lesson.studio} ${lesson.city} ${lesson.zip} ${lesson.locationName}`.toLowerCase();
     const matchesSearch = !search || searchable.includes(search);
     return matchesMode && matchesAge && matchesType && matchesZip && matchesSearch;
   });
@@ -298,6 +232,7 @@ function renderCalendar(items) {
         <strong>${lesson.time}</strong>
         <span>${lesson.title}</span>
         <span>${lesson.studio}</span>
+        <span>${lesson.city}, ${lesson.zip}</span>
       `;
       column.append(button);
     });
@@ -319,12 +254,13 @@ function renderLessons(items) {
     card.className = "lesson-card";
     card.innerHTML = `
       <div class="lesson-meta">
-        <span class="pill ${lesson.mode}">${lesson.mode}</span>
+        <span class="pill ${lesson.mode}">${formatMode(lesson.mode)}</span>
         <span class="pill">${lesson.type}</span>
       </div>
       <h3>${lesson.title}</h3>
       <p>${lesson.studio} in ${lesson.city}, ${lesson.zip}</p>
-      <p>${lesson.weekday} at ${lesson.time} with ${lesson.teacher}. ${lesson.frequency} schedule.</p>
+      <p>${lesson.locationName}: ${lesson.address}</p>
+      <p>${formatSchedule(lesson)}. Ages ${formatAges(lesson.ages)}. ${lesson.frequency} schedule.</p>
       <button type="button" data-lesson-id="${lesson.id}">Choose</button>
     `;
     els.lessonList.append(card);
@@ -343,8 +279,8 @@ function setSelectedLesson(id) {
   els.selectedClass.classList.add("ready");
   els.selectedClass.innerHTML = `
     <strong>${lesson.title}</strong><br>
-    ${lesson.studio}, ${lesson.city}<br>
-    ${lesson.weekday}, ${lessonDisplayDate(lesson)} at ${lesson.time}
+    ${lesson.studio}, ${lesson.city} ${lesson.zip}<br>
+    ${formatSelectedSchedule(lesson)}
   `;
   els.summaryStudio.textContent = lesson.studio;
   els.formStatus.textContent = "";
@@ -366,7 +302,7 @@ function updateMode(mode) {
 }
 
 function renderSummary(items) {
-  els.summaryMode.textContent = state.mode === "public" ? "Public" : "Private";
+  els.summaryMode.textContent = state.mode === "all" ? "All" : formatMode(state.mode);
   els.summaryAge.textContent = state.age;
   if (!state.selectedLesson) {
     els.summaryStudio.textContent = items.length ? "Choose a class" : "No matches";
@@ -518,5 +454,20 @@ els.bookingForm.addEventListener("submit", (event) => {
   els.bookingForm.reset();
 });
 
-populateTopFilters();
-renderAll();
+async function loadLessons() {
+  try {
+    const response = await fetch("dance-classes.json");
+    if (!response.ok) throw new Error(`Unable to load dance-classes.json (${response.status})`);
+    const data = await response.json();
+    lessons = data.filter(isCompleteClass).map(normalizeLesson);
+    populateTopFilters();
+    renderAll();
+  } catch (error) {
+    els.calendarGrid.innerHTML = '<div class="empty-day">Class data could not be loaded. Run this site through a local server.</div>';
+    els.lessonList.innerHTML = '<div class="empty-day">Class data could not be loaded. Run this site through a local server.</div>';
+    els.resultCount.textContent = "0 options";
+    console.error(error);
+  }
+}
+
+loadLessons();

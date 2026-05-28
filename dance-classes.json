@@ -1,0 +1,728 @@
+[
+  {
+    "id": "bay-area-dance-school-pre-ballet-los-altos-tue-1015",
+    "studio": "Bay Area Dance School",
+    "className": "Pre-Ballet",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["3-5"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "10:15 AM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-dance-school-contemporary-1-2-los-altos-tue-400",
+    "studio": "Bay Area Dance School",
+    "className": "Contemporary 1/2",
+    "danceType": "Contemporary",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11", "12-14"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "4:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-dance-school-beginning-hip-hop-los-altos-tue-445",
+    "studio": "Bay Area Dance School",
+    "className": "Beginning Hip-Hop",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "4:45 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-dance-school-adult-ballet-los-altos-wed-1000",
+    "studio": "Bay Area Dance School",
+    "className": "Adult Ballet",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "10:00 AM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-dance-school-ballet-1-2-los-altos-wed-400",
+    "studio": "Bay Area Dance School",
+    "className": "Ballet 1/2",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "4:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-dance-school-kids-tap-los-altos-thu-530",
+    "studio": "Bay Area Dance School",
+    "className": "Kids Tap",
+    "danceType": "Tap",
+    "mode": "public",
+    "ageGroups": ["3-5", "6-8"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Thursday",
+      "time": "5:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-dance-school-hip-hop-1-2-los-altos-fri-400",
+    "studio": "Bay Area Dance School",
+    "className": "Hip-Hop 1/2",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11"],
+    "location": {
+      "name": "Bay Area Dance School",
+      "address": "664 Fremont Ave",
+      "city": "Los Altos",
+      "state": "CA",
+      "zip": "94024"
+    },
+    "schedule": {
+      "weekday": "Friday",
+      "time": "4:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareadances.com/schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-hiphop-age-4-6-san-jose-mon-530",
+    "studio": "Tingna Dance Studio",
+    "className": "Hiphop Age 4-6",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["3-5", "6-8"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "5:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-kpop-intermediate-san-jose-mon-400",
+    "studio": "Tingna Dance Studio",
+    "className": "Kpop Intermediate",
+    "danceType": "K-Pop",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "4:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-hiphop-beginner-san-jose-tue-630",
+    "studio": "Tingna Dance Studio",
+    "className": "Hiphop Beginner",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "6:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-zumba-adult-san-jose-tue-700",
+    "studio": "Tingna Dance Studio",
+    "className": "Zumba Adult",
+    "danceType": "Zumba",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "7:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-jazz-adult-san-jose-wed-1000",
+    "studio": "Tingna Dance Studio",
+    "className": "Jazz Adult",
+    "danceType": "Jazz",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "10:00 AM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-breaking-beginner-san-jose-wed-400",
+    "studio": "Tingna Dance Studio",
+    "className": "Breaking Beginner",
+    "danceType": "Breaking",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "4:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-contemporary-intermediate-san-jose-wed-630",
+    "studio": "Tingna Dance Studio",
+    "className": "Contemporary Intermediate",
+    "danceType": "Contemporary",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "6:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "tingna-kpop-beginner-san-jose-fri-530",
+    "studio": "Tingna Dance Studio",
+    "className": "Kpop Beginner",
+    "danceType": "K-Pop",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Tingna Dance Studio",
+      "address": "1510 Oakland Rd #120",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95112"
+    },
+    "schedule": {
+      "weekday": "Friday",
+      "time": "5:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://tingna.dance/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "canvas-hip-hop-beginning-san-francisco-mon-415",
+    "studio": "CANVAS Dance Arts",
+    "className": "Hip Hop Beginning",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11", "12-14", "15-17"],
+    "location": {
+      "name": "CANVAS Dance Arts",
+      "address": "5499 California St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94118"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "4:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://canvasdancearts.com/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "canvas-ballet-hip-hop-basics-san-francisco-mon-500",
+    "studio": "CANVAS Dance Arts",
+    "className": "Ballet/Hip Hop Basics",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["3-5", "6-8"],
+    "location": {
+      "name": "CANVAS Dance Arts",
+      "address": "5499 California St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94118"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "5:00 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://canvasdancearts.com/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "canvas-ballet-beginning-san-francisco-tue-350",
+    "studio": "CANVAS Dance Arts",
+    "className": "Ballet Beginning",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11", "12-14", "15-17"],
+    "location": {
+      "name": "CANVAS Dance Arts",
+      "address": "5499 California St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94118"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "3:50 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://canvasdancearts.com/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "canvas-ballet-hip-hop-basics-san-francisco-tue-440",
+    "studio": "CANVAS Dance Arts",
+    "className": "Ballet/Hip Hop Basics",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["3-5"],
+    "location": {
+      "name": "CANVAS Dance Arts",
+      "address": "5499 California St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94118"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "4:40 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://canvasdancearts.com/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "star-dance-contemporary-stars-san-francisco-tue-615",
+    "studio": "Star Dance Studio",
+    "className": "Contemporary Stars I",
+    "danceType": "Contemporary",
+    "mode": "public",
+    "ageGroups": ["6-8", "9-11"],
+    "location": {
+      "name": "Star Dance Studio",
+      "address": "300 Moraga Street at 9th Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94122"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "6:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.stardancestudio.net/class-schedule/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "star-dance-contemporary-stars-ii-san-francisco-wed-615",
+    "studio": "Star Dance Studio",
+    "className": "Contemporary Stars II",
+    "danceType": "Contemporary",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14"],
+    "location": {
+      "name": "Star Dance Studio",
+      "address": "300 Moraga Street at 9th Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94122"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "6:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.stardancestudio.net/class-schedule/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "star-dance-hip-hop-san-francisco-mon-615",
+    "studio": "Star Dance Studio",
+    "className": "Hip Hop",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Star Dance Studio",
+      "address": "300 Moraga Street at 9th Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94122"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "6:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.stardancestudio.net/class-schedule/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "star-dance-jazz-i-san-francisco-wed-515",
+    "studio": "Star Dance Studio",
+    "className": "Starlights Jazz I",
+    "danceType": "Jazz",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14"],
+    "location": {
+      "name": "Star Dance Studio",
+      "address": "300 Moraga Street at 9th Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94122"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "5:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.stardancestudio.net/class-schedule/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "star-dance-tap-ii-san-francisco-wed-415",
+    "studio": "Star Dance Studio",
+    "className": "Starlights II Tap",
+    "danceType": "Tap",
+    "mode": "public",
+    "ageGroups": ["9-11", "12-14", "15-17"],
+    "location": {
+      "name": "Star Dance Studio",
+      "address": "300 Moraga Street at 9th Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94122"
+    },
+    "schedule": {
+      "weekday": "Wednesday",
+      "time": "4:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.stardancestudio.net/class-schedule/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "bay-area-ballet-conservatory-intermediate-ballet-south-sf-tue-715",
+    "studio": "Bay Area Ballet Conservatory",
+    "className": "Intermediate Ballet",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["15-17", "18+"],
+    "location": {
+      "name": "Bay Area Ballet Conservatory",
+      "address": "275 Wattis Way",
+      "city": "South San Francisco",
+      "state": "CA",
+      "zip": "94080"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "7:15 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.bayareabc.com/class-schedule-adult",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "rae-studios-jazz-funk-san-francisco-mon-530",
+    "studio": "Rae Studios",
+    "className": "Jazz Funk",
+    "danceType": "Jazz",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Rae Studios Union Square",
+      "address": "414 Mason Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94102"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "5:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.raestudios-sf.com/class-schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "rae-studios-hip-hop-san-francisco-mon-530",
+    "studio": "Rae Studios",
+    "className": "Hip Hop",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Rae Studios Union Square",
+      "address": "414 Mason Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94102"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "5:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.raestudios-sf.com/class-schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "rae-studios-k-pop-san-francisco-tue-630",
+    "studio": "Rae Studios",
+    "className": "K-Pop",
+    "danceType": "K-Pop",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Rae Studios Union Square",
+      "address": "414 Mason Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94102"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "6:30 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.raestudios-sf.com/class-schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "rae-studios-foundations-ballet-san-francisco-sat-945",
+    "studio": "Rae Studios",
+    "className": "Foundations: Ballet",
+    "danceType": "Ballet",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Rae Studios Union Square",
+      "address": "414 Mason Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94102"
+    },
+    "schedule": {
+      "weekday": "Saturday",
+      "time": "9:45 AM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://www.raestudios-sf.com/class-schedule",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "on-one-beg-choreo-san-jose-mon-610",
+    "studio": "On One Studios",
+    "className": "Beg Choreo",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "On One Studios",
+      "address": "422 North Capitol Avenue",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95133"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "6:10 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://ononestudios.com/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "on-one-int-adv-grooves-san-jose-mon-610",
+    "studio": "On One Studios",
+    "className": "Int / Adv Grooves",
+    "danceType": "Hip-Hop",
+    "mode": "public",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "On One Studios",
+      "address": "422 North Capitol Avenue",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95133"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "6:10 PM",
+      "frequency": "Weekly"
+    },
+    "sourceUrl": "https://ononestudios.com/",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "mood-moves-private-hip-hop-san-francisco-mon-appointment",
+    "studio": "Mood & Moves Dance Co.",
+    "className": "Private Hip Hop Lesson",
+    "danceType": "Hip-Hop",
+    "mode": "private",
+    "ageGroups": ["3-5", "6-8", "9-11", "12-14", "15-17", "18+"],
+    "location": {
+      "name": "Mood & Moves Dance Co.",
+      "address": "264 Dore Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94103"
+    },
+    "schedule": {
+      "weekday": "Monday",
+      "time": "By appointment",
+      "frequency": "Flexible"
+    },
+    "sourceUrl": "https://www.moodandmoves.com/private-lessons",
+    "lastChecked": "2026-05-28"
+  },
+  {
+    "id": "rae-studios-private-contemporary-san-francisco-tue-appointment",
+    "studio": "Rae Studios",
+    "className": "Private Contemporary Lesson",
+    "danceType": "Contemporary",
+    "mode": "private",
+    "ageGroups": ["18+"],
+    "location": {
+      "name": "Rae Studios Union Square",
+      "address": "414 Mason Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94102"
+    },
+    "schedule": {
+      "weekday": "Tuesday",
+      "time": "By appointment",
+      "frequency": "Flexible"
+    },
+    "sourceUrl": "https://www.raestudios-sf.com/private-lessons",
+    "lastChecked": "2026-05-28"
+  }
+]
