@@ -159,7 +159,7 @@ const state = {
 const els = {
   danceType: document.querySelector("#danceType"),
   zipCode: document.querySelector("#zipCode"),
-  zipSuggestionSelect: document.querySelector("#zipSuggestionSelect"),
+  zipSuggestionList: document.querySelector("#zipSuggestionList"),
   questionSelect: document.querySelector("#questionSelect"),
   searchInput: document.querySelector("#searchInput"),
   ageOptions: document.querySelector("#ageOptions"),
@@ -198,24 +198,33 @@ function zipQuery() {
   return els.zipCode.value.trim();
 }
 
-function studioOptionsForZip() {
+function zipSuggestions() {
   const query = zipQuery();
-  const source = query ? lessons.filter((lesson) => lesson.zip.startsWith(query)) : lessons;
-  return uniqueValues(source, "studio");
+  return uniqueValues(lessons, "zip")
+    .filter((zip) => query && zip.startsWith(query) && zip !== query)
+    .slice(0, 5);
+}
+
+function setZipSuggestionsOpen(isOpen) {
+  els.zipSuggestionList.classList.toggle("open", isOpen);
+  els.zipCode.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
 
 function renderZipSuggestions() {
-  const query = zipQuery();
-  const suggestions = uniqueValues(lessons, "zip").filter((zip) => !query || zip.startsWith(query)).slice(0, 5);
-  const current = els.zipSuggestionSelect.value;
-  els.zipSuggestionSelect.innerHTML = '<option value="">Choose ZIP</option>';
+  const suggestions = zipSuggestions();
+  els.zipSuggestionList.innerHTML = "";
   suggestions.forEach((zip) => {
-    const option = document.createElement("option");
-    option.value = zip;
-    option.textContent = zip;
-    els.zipSuggestionSelect.append(option);
+    const matchingLessons = lessons.filter((lesson) => lesson.zip === zip);
+    const cities = uniqueValues(matchingLessons, "city").join(", ");
+    const option = document.createElement("button");
+    option.type = "button";
+    option.className = "zip-suggestion";
+    option.setAttribute("role", "option");
+    option.dataset.zip = zip;
+    option.innerHTML = `<span>${zip}</span><small>${cities}</small>`;
+    els.zipSuggestionList.append(option);
   });
-  els.zipSuggestionSelect.value = suggestions.includes(query) ? query : suggestions.includes(current) ? current : "";
+  setZipSuggestionsOpen(document.activeElement === els.zipCode && suggestions.length > 0);
 }
 
 function populateTopFilters() {
@@ -404,18 +413,62 @@ els.ageOptions.addEventListener("click", (event) => {
 });
 
 els.zipCode.addEventListener("input", () => {
+  els.zipCode.value = els.zipCode.value.replace(/\D/g, "");
   state.selectedLesson = null;
   els.selectedClass.classList.remove("ready");
   els.selectedClass.textContent = "Select a class from the calendar.";
   renderAll();
 });
 
-els.zipSuggestionSelect.addEventListener("change", () => {
-  els.zipCode.value = els.zipSuggestionSelect.value;
+els.zipCode.addEventListener("focus", () => {
+  renderZipSuggestions();
+});
+
+els.zipCode.addEventListener("keydown", (event) => {
+  if (event.key !== "ArrowDown") return;
+  const firstSuggestion = els.zipSuggestionList.querySelector(".zip-suggestion");
+  if (firstSuggestion) {
+    event.preventDefault();
+    firstSuggestion.focus();
+  }
+});
+
+els.zipSuggestionList.addEventListener("click", (event) => {
+  const option = event.target.closest("[data-zip]");
+  if (!option) return;
+  els.zipCode.value = option.dataset.zip;
   state.selectedLesson = null;
   els.selectedClass.classList.remove("ready");
   els.selectedClass.textContent = "Select a class from the calendar.";
+  setZipSuggestionsOpen(false);
   renderAll();
+});
+
+els.zipSuggestionList.addEventListener("keydown", (event) => {
+  const suggestions = [...els.zipSuggestionList.querySelectorAll(".zip-suggestion")];
+  const index = suggestions.indexOf(document.activeElement);
+  if (event.key === "Escape") {
+    setZipSuggestionsOpen(false);
+    els.zipCode.focus();
+  }
+  if (event.key === "ArrowDown" && suggestions[index + 1]) {
+    event.preventDefault();
+    suggestions[index + 1].focus();
+  }
+  if (event.key === "ArrowUp") {
+    event.preventDefault();
+    if (suggestions[index - 1]) {
+      suggestions[index - 1].focus();
+    } else {
+      els.zipCode.focus();
+    }
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".zip-combobox")) {
+    setZipSuggestionsOpen(false);
+  }
 });
 
 els.searchInput.addEventListener("input", () => {

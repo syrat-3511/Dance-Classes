@@ -4,13 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dance the Night Away</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Nunito:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Dance the Night Away home">
         <span class="brand-mark" aria-hidden="true">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Disco%20Ball.JPG?width=160" alt="" />
+          <svg class="disco-logo" viewBox="0 0 64 64" role="img">
+            <defs>
+              <radialGradient id="discoGlow" cx="35%" cy="25%" r="72%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="34%" stop-color="#dffbff" />
+                <stop offset="70%" stop-color="#b68cff" />
+                <stop offset="100%" stop-color="#6551ff" />
+              </radialGradient>
+            </defs>
+            <path class="disco-string" d="M32 4v8" />
+            <circle class="disco-ring" cx="32" cy="13" r="4" />
+            <circle class="disco-ball" cx="32" cy="36" r="22" />
+            <path class="tile-line" d="M12 36h40M16 24h32M16 48h32M32 14v44M21 18c5 10 5 26 0 36M43 18c-5 10-5 26 0 36" />
+            <path class="sparkle sparkle-large" d="M52 9l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" />
+            <path class="sparkle sparkle-small" d="M13 10l1.3 3 3 1.3-3 1.3-1.3 3-1.3-3-3-1.3 3-1.3L13 10z" />
+          </svg>
         </span>
         <span class="brand-text">Dance the Night Away</span>
       </a>
@@ -24,10 +45,21 @@
         </label>
         <label class="location-field">
           <span>Location</span>
-          <input id="zipCode" type="text" inputmode="numeric" maxlength="5" placeholder="Type ZIP code" autocomplete="off" />
-          <select id="zipSuggestionSelect" aria-label="ZIP code suggestions">
-            <option value="">Choose ZIP</option>
-          </select>
+          <div class="zip-combobox">
+            <input
+              id="zipCode"
+              type="text"
+              inputmode="numeric"
+              maxlength="5"
+              placeholder="Type ZIP code"
+              autocomplete="off"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="zipSuggestionList"
+            />
+            <div class="zip-suggestions" id="zipSuggestionList" role="listbox" aria-label="ZIP code suggestions"></div>
+          </div>
         </label>
         <label>
           <span>Questions</span>
@@ -90,8 +122,8 @@
           </figure>
           <figure class="photo-card">
             <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/Folkl%C3%B3rico%20dancers%20at%20La%20Fiesta%20de%20Tumac%C3%A1cori%20%28441e9e9d-32df-41ad-aa2b-b9c81d430dc6%29.JPG?width=900"
-              alt="Group of folklorico dancers"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Folkl%C3%B3rico%20dancers%20at%20La%20Fiesta%20de%20Tumac%C3%A1cori%20%2805b3f374-a25e-4814-8817-c5101d58b15c%29.jpg?width=900"
+              alt="Folklorico dancers performing together on stage"
             />
           </figure>
           <figure class="photo-card">
@@ -112,67 +144,70 @@
 
         <div class="question-answer" id="questionAnswer" aria-live="polite"></div>
 
-        <section class="calendar-board" aria-labelledby="calendarHeading">
-          <div class="section-heading">
-            <h2 id="calendarHeading">Calendar</h2>
-            <p id="calendarHint">Pick a class time to start a booking.</p>
-          </div>
-          <div class="calendar-grid" id="calendarGrid"></div>
-          <div class="week-controls" aria-label="Calendar week controls">
-            <button class="week-arrow week-arrow-secondary" id="previousWeekButton" type="button" aria-label="Show previous week of classes">
-              <strong aria-hidden="true">←</strong>
-              <span>Previous week</span>
-            </button>
-            <button class="week-arrow" id="nextWeekButton" type="button" aria-label="Show next week of classes">
-              <span>Next week</span>
-              <strong aria-hidden="true">→</strong>
-            </button>
-          </div>
-        </section>
+        <div class="calendar-and-booking">
+          <section class="calendar-board" aria-labelledby="calendarHeading">
+            <div class="section-heading">
+              <h2 id="calendarHeading">Calendar</h2>
+              <p id="calendarHint">Pick a class time to start a booking.</p>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+            <div class="week-controls" aria-label="Calendar week controls">
+              <button class="week-arrow week-arrow-secondary" id="previousWeekButton" type="button" aria-label="Show previous week of classes">
+                <strong aria-hidden="true">←</strong>
+                <span>Previous week</span>
+              </button>
+              <button class="week-arrow" id="nextWeekButton" type="button" aria-label="Show next week of classes">
+                <span>Next week</span>
+                <strong aria-hidden="true">→</strong>
+              </button>
+            </div>
+          </section>
 
-        <section class="lesson-list" aria-labelledby="lessonHeading">
-          <div class="section-heading">
-            <h2 id="lessonHeading">Specific Lessons</h2>
-            <p>Updates from the filters above.</p>
-          </div>
-          <div class="lessons" id="lessonList"></div>
-        </section>
+          <section class="lesson-list" aria-labelledby="lessonHeading">
+            <div class="section-heading">
+              <h2 id="lessonHeading">Specific Lessons</h2>
+              <p>Updates from the filters above.</p>
+            </div>
+            <div class="lessons" id="lessonList"></div>
+          </section>
+        </div>
+
+        <aside class="booking-panel" aria-label="Booking request">
+          <form id="bookingForm">
+            <div class="booking-top">
+              <p class="eyebrow">Request spot</p>
+              <h2>Student Info</h2>
+            </div>
+
+            <div class="selected-class" id="selectedClass">Select a class from the calendar.</div>
+
+            <label>
+              Full name
+              <input id="fullName" name="fullName" autocomplete="name" required />
+            </label>
+            <label>
+              Phone
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            </label>
+            <label>
+              Email
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Student age
+              <input id="age" name="age" type="number" min="2" max="99" required />
+            </label>
+            <label>
+              Notes
+              <textarea id="notes" name="notes" rows="4" placeholder="Experience level, goals, preferred teacher"></textarea>
+            </label>
+
+            <button class="submit-button" type="submit">Submit Request</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </aside>
       </section>
 
-      <aside class="booking-panel" aria-label="Booking request">
-        <form id="bookingForm">
-          <div class="booking-top">
-            <p class="eyebrow">Request spot</p>
-            <h2>Student Info</h2>
-          </div>
-
-          <div class="selected-class" id="selectedClass">Select a class from the calendar.</div>
-
-          <label>
-            Full name
-            <input id="fullName" name="fullName" autocomplete="name" required />
-          </label>
-          <label>
-            Phone
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
-          </label>
-          <label>
-            Email
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </label>
-          <label>
-            Student age
-            <input id="age" name="age" type="number" min="2" max="99" required />
-          </label>
-          <label>
-            Notes
-            <textarea id="notes" name="notes" rows="4" placeholder="Experience level, goals, preferred teacher"></textarea>
-          </label>
-
-          <button class="submit-button" type="submit">Submit Request</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
-      </aside>
     </main>
 
     <footer class="bottom-nav">
