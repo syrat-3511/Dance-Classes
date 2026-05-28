@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dance the Night Away</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Dance the Night Away home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Disco%20Ball.JPG?width=160" alt="" />
+        </span>
+        <span class="brand-text">Dance the Night Away</span>
+      </a>
+
+      <nav class="top-filters" aria-label="Class filters">
+        <label>
+          <span>Dance</span>
+          <select id="danceType">
+            <option value="all">All types</option>
+          </select>
+        </label>
+        <label class="location-field">
+          <span>Location</span>
+          <input id="zipCode" type="text" inputmode="numeric" maxlength="5" placeholder="Type ZIP code" autocomplete="off" />
+          <select id="zipSuggestionSelect" aria-label="ZIP code suggestions">
+            <option value="">Choose ZIP</option>
+          </select>
+        </label>
+        <label>
+          <span>Questions</span>
+          <select id="questionSelect">
+            <option value="first">Before first class</option>
+            <option value="pricing">Pricing</option>
+            <option value="parent">Parent info</option>
+            <option value="api">Future APIs</option>
+          </select>
+        </label>
+        <label class="search-field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Style, studio, city" />
+        </label>
+      </nav>
+    </header>
+
+    <main id="home" class="app-shell">
+      <aside class="side-panel" aria-label="Class mode and ages">
+        <div class="mode-tabs" role="tablist" aria-label="Class type">
+          <button class="mode-tab active" id="publicTab" type="button" data-mode="public" role="tab" aria-selected="true">
+            Public
+          </button>
+          <button class="mode-tab" id="privateTab" type="button" data-mode="private" role="tab" aria-selected="false">
+            Private
+          </button>
+        </div>
+
+        <section class="age-panel" aria-labelledby="ageHeading">
+          <h2 id="ageHeading">Age Group</h2>
+          <div class="age-options" id="ageOptions"></div>
+        </section>
+
+        <section class="summary-panel" aria-labelledby="summaryHeading">
+          <h2 id="summaryHeading">Selection</h2>
+          <dl>
+            <div>
+              <dt>Mode</dt>
+              <dd id="summaryMode">Public</dd>
+            </div>
+            <div>
+              <dt>Age</dt>
+              <dd id="summaryAge">Any age</dd>
+            </div>
+            <div>
+              <dt>Studio</dt>
+              <dd id="summaryStudio">Choose a class</dd>
+            </div>
+          </dl>
+        </section>
+      </aside>
+
+      <section class="schedule-workspace" aria-label="Dance class schedule">
+        <div class="visual-band">
+          <figure class="photo-card">
+            <img
+              src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=900&q=80"
+              alt="Ballet dancer in motion"
+            />
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Folkl%C3%B3rico%20dancers%20at%20La%20Fiesta%20de%20Tumac%C3%A1cori%20%28441e9e9d-32df-41ad-aa2b-b9c81d430dc6%29.JPG?width=900"
+              alt="Group of folklorico dancers"
+            />
+          </figure>
+          <figure class="photo-card">
+            <img
+              src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&w=900&q=80"
+              alt="Dancers practicing together"
+            />
+          </figure>
+        </div>
+
+        <div class="workspace-header">
+          <div>
+            <p class="eyebrow">Bay Area demo schedule</p>
+            <h1>Find a class near you</h1>
+          </div>
+          <div class="result-count" id="resultCount">0 options</div>
+        </div>
+
+        <div class="question-answer" id="questionAnswer" aria-live="polite"></div>
+
+        <section class="calendar-board" aria-labelledby="calendarHeading">
+          <div class="section-heading">
+            <h2 id="calendarHeading">Calendar</h2>
+            <p id="calendarHint">Pick a class time to start a booking.</p>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+          <div class="week-controls" aria-label="Calendar week controls">
+            <button class="week-arrow week-arrow-secondary" id="previousWeekButton" type="button" aria-label="Show previous week of classes">
+              <strong aria-hidden="true">←</strong>
+              <span>Previous week</span>
+            </button>
+            <button class="week-arrow" id="nextWeekButton" type="button" aria-label="Show next week of classes">
+              <span>Next week</span>
+              <strong aria-hidden="true">→</strong>
+            </button>
+          </div>
+        </section>
+
+        <section class="lesson-list" aria-labelledby="lessonHeading">
+          <div class="section-heading">
+            <h2 id="lessonHeading">Specific Lessons</h2>
+            <p>Updates from the filters above.</p>
+          </div>
+          <div class="lessons" id="lessonList"></div>
+        </section>
+      </section>
+
+      <aside class="booking-panel" aria-label="Booking request">
+        <form id="bookingForm">
+          <div class="booking-top">
+            <p class="eyebrow">Request spot</p>
+            <h2>Student Info</h2>
+          </div>
+
+          <div class="selected-class" id="selectedClass">Select a class from the calendar.</div>
+
+          <label>
+            Full name
+            <input id="fullName" name="fullName" autocomplete="name" required />
+          </label>
+          <label>
+            Phone
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </label>
+          <label>
+            Email
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Student age
+            <input id="age" name="age" type="number" min="2" max="99" required />
+          </label>
+          <label>
+            Notes
+            <textarea id="notes" name="notes" rows="4" placeholder="Experience level, goals, preferred teacher"></textarea>
+          </label>
+
+          <button class="submit-button" type="submit">Submit Request</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </aside>
+    </main>
+
+    <footer class="bottom-nav">
+      <span>Made by Syra Tahiliani</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
