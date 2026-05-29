@@ -175,37 +175,35 @@
           </section>
         </div>
 
-        <aside class="booking-panel" aria-label="Booking request">
-          <form id="bookingForm">
+        <aside class="booking-panel" aria-label="Contact a dance studio">
+          <form id="contactForm">
             <div class="booking-top">
-              <p class="eyebrow">Request spot</p>
-              <h2>Student Info</h2>
+              <p class="eyebrow">Contact studio</p>
+              <h2>Send a Message</h2>
             </div>
 
-            <div class="selected-class" id="selectedClass">Select a class from the calendar.</div>
+            <div class="selected-class" id="selectedClass">Choose a class or select a studio below.</div>
 
             <label>
-              Full name
-              <input id="fullName" name="fullName" autocomplete="name" required />
+              Dance studio
+              <select id="studioSelect" name="studio" required>
+                <option value="">Select a studio</option>
+              </select>
             </label>
             <label>
-              Phone
-              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              Your name
+              <input id="senderName" name="name" autocomplete="name" required />
             </label>
             <label>
-              Email
-              <input id="email" name="email" type="email" autocomplete="email" required />
+              Your email
+              <input id="senderEmail" name="email" type="email" autocomplete="email" required />
             </label>
             <label>
-              Student age
-              <input id="age" name="age" type="number" min="2" max="99" required />
-            </label>
-            <label>
-              Notes
-              <textarea id="notes" name="notes" rows="4" placeholder="Experience level, goals, preferred teacher"></textarea>
+              Message
+              <textarea id="message" name="message" rows="5" placeholder="Class, age, experience level, goals, or schedule questions" required></textarea>
             </label>
 
-            <button class="submit-button" type="submit">Submit Request</button>
+            <button class="submit-button" id="submitContactButton" type="submit">Send Message</button>
             <p class="form-status" id="formStatus" role="status"></p>
           </form>
         </aside>
@@ -217,6 +215,7 @@
       <span>Made by Syra Tahiliani</span>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

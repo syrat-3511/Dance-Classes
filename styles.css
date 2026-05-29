@@ -750,12 +750,24 @@ button:focus-visible {
   font-weight: 900;
 }
 
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 .form-status {
   min-height: 21px;
   margin: 0;
-  color: #007f91;
   font-weight: 800;
   line-height: 1.35;
+}
+
+.form-status.success {
+  color: #007f91;
+}
+
+.form-status.error {
+  color: #b4144f;
 }
 
 .bottom-nav {
